@@ -4,6 +4,13 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### React
+.DS_*
+.log
+logs
+**/.backup.*
+*/.back.*
+
 ### STS ###
 .apt_generated
 .classpath
@@ -21,6 +28,12 @@ target/
 
 ### VS Code ###
 .vscode/
+
+.sublime
+
+psd
+thumb
+sketch
 
 ### Java ###
 *.class
