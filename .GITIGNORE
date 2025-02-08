@@ -45,3 +45,5 @@ sketch
 *.zip
 *.tar.gz
 *.rar
+
+application.properties
