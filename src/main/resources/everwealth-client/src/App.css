@@ -42,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #282c34;
+  background-color: #FFFFFF;
 }
 .header h1 {
   color: white;
@@ -56,16 +56,23 @@
   color: white;
   min-height: 600px;
   flex-grow: 1;
+  align-items: center;
 }
 @keyframes color-change {
   0%  {background-color: #246300;}
   50%  {background-color: #7eb75d;}
   100%  {background-color: #246300;}
 }
+.body h1 {
+  font-size: 50px;
+}
+.body h2 {
+  font-size: 20px;
+}
 .footer {
   display: flex;
   justify-content: center;
-  background-color: #282c34;
+  background-color: #FFFFFF;
   min-height: 100%;
   color: white;
   flex-shrink: 0;

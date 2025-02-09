@@ -1,0 +1,72 @@
+.sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 280px;  /* Adjust width as needed */
+    position: fixed;  /* Ensures the sidebar stays fixed */
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    z-index: 10;
+    padding: 20px;  /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 80px;  /* Adjust the gap from the top */
+    bottom: 80px;  /* Adjust the gap from the bottom */
+    right: 0;  /* Place it at the right side of the sidebar */
+    width: 1.5px;  /* Width of the vertical line */
+    background-color: #c9c9c9;  /* Color of the vertical line */
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text */
+  }
+  
+
+.sidebar-content img {
+    height: 30%;  /* Adjust size */
+    width: 30%;   /* Adjust size */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 300ms ease, transform 300ms ease, border-radius 300ms ease;
+}
+
+.sidebar ul li svg {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.sidebar ul li:hover {
+    background-color: #e2dfdf;
+    border-radius: 15px;
+    transform: scale(1.05);
+    border-radius: 12px;
+}

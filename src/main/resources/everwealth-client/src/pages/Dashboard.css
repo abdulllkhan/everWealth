@@ -1,0 +1,17 @@
+.dash-body {
+    overflow-x: hidden;
+}
+
+.user-greeting {
+    padding-left: 260px; /* Move the content to the right */
+    position: relative;  /* Ensure the element is not covered */
+    z-index: 1;          /* Ensure it's on top */
+    background-color: rgba(0, 255, 0, 0.1); /* Temporary background color to debug */
+}
+
+.user-greeting h1 {
+    font-size: 2rem;
+    color: black;
+    text-align: left;
+    margin-top: 20px;
+}
