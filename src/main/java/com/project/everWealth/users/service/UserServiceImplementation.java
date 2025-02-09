@@ -6,6 +6,7 @@ import com.project.everWealth.exceptions.ErrorResponse;
 import com.project.everWealth.users.entity.CreateUserPayload;
 import com.project.everWealth.users.entity.CreateUserResponse;
 import com.project.everWealth.users.entity.User;
+import com.project.everWealth.users.entity.UserLoginPayload;
 import com.project.everWealth.users.entity.UserRepository;
 
 import java.nio.charset.StandardCharsets;
@@ -146,6 +147,43 @@ public class UserServiceImplementation implements UserService {
         }
         
         return sb.toString();
+    }
+
+    @Override
+    public String loginUserPayload(UserLoginPayload userLoginPayload) throws RuntimeException, Exception {
+        
+        try{
+
+            if(userLoginPayload == null) {
+                throw new BadRequestException("Payload is empty");
+            }
+    
+            if(userLoginPayload.getEmailId().isBlank() && userLoginPayload.getPassword().isBlank()) {
+                throw new BadRequestException("username, password are mandatory fields");
+            }
+    
+            Optional<User> user = userRepository.findByEmailId(userLoginPayload.getEmailId());
+            if (!user.isPresent()) {
+                throw new BadRequestException("User not found, invalid emailId");
+            }
+
+            User temp = user.get();
+            String hashedPassword = getSHA(userLoginPayload.getPassword());
+            if(!temp.getPassword().equals(hashedPassword)) {
+                throw new BadRequestException("Invalid Password");
+            }
+
+            CreateUserResponse response = new CreateUserResponse();
+            response.setUserName(temp.getUserName());
+            response.setAccountNumber(temp.getAccountNumber());
+            response.setUserId(temp.getId().toString());
+            response.setMessage("Login Successful");
+
+            return gson.toJson(response);
+
+        } catch (Exception e) {
+            throw new BadRequestException(e.toString());
+        }
     }
 
     
