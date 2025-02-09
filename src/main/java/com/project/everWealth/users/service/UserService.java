@@ -11,5 +11,7 @@ import com.project.everWealth.users.entity.CreateUserPayload;
 public interface UserService {
 
     // String createUser(CreateUserPayload createUserPayload);
+
+    String fetchUserDetailsById(String userId);
     
 }

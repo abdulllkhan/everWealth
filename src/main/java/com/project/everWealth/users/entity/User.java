@@ -2,7 +2,9 @@ package com.project.everWealth.users.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import java.time.Instant;
@@ -13,11 +15,16 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "userName", unique = true, nullable = false)
+    private String userName;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -40,11 +47,14 @@ public class User {
     @Column(name = "zip", nullable = false, length = 10)
     private String zip;
 
-    @Column(name = "nessie_id", unique = true, nullable = false)
-    private String nessieId;
-
     @Column(name = "email_id", unique = true, nullable = false)
     private String emailId;
+
+    @Column(name = "account_number", unique = true, nullable = false)
+    private String accountNumber;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     @Column(name = "created_date", nullable = false)
     private Long createdDate;
