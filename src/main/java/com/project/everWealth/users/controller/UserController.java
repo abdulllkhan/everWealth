@@ -27,7 +27,7 @@ public class UserController {
         // this.gson = gson;
     }
 
-    @PostMapping("user/create")
+    @PostMapping("api/user/create")
     public String createUser(@RequestBody CreateUserPayload createUserPayload) throws Throwable{
         return userService.createUser(createUserPayload);
     }
