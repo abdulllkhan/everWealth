@@ -23,8 +23,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "userName", unique = true, nullable = false)
-    private String userName;
+    @Column(nullable = false, unique = true)
+    private String userName; 
 
     @Column(name = "first_name", nullable = false)
     private String firstName;

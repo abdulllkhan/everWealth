@@ -1,11 +1,15 @@
 package com.project.everWealth.users.entity;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateUserPayload {
 
     @NotBlank(message = "Username is required")
@@ -31,12 +35,6 @@ public class CreateUserPayload {
 
     @NotBlank(message = "ZIP code is required")
     private String zip;
-
-    @NotBlank(message = "Nessie ID is required")
-    private String nessieId;
-
-    @NotBlank(message = "Account number is required")
-    private String accountNumber;
 
     @NotBlank(message = "Password is required")
     private String password;

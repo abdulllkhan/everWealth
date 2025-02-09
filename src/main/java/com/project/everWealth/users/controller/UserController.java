@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.project.everWealth.users.entity.CreateUserPayload;
+import com.project.everWealth.users.entity.UserLoginPayload;
 import com.project.everWealth.users.service.UserService;
 
 @RestController
@@ -27,7 +28,12 @@ public class UserController {
         // this.gson = gson;
     }
 
-    @PostMapping("user/create")
+    @PostMapping("api/user/login")
+    public String loginUserPayload(@RequestBody UserLoginPayload userLoginPayload) throws Throwable{
+        return userService.loginUserPayload(userLoginPayload);
+    }
+
+    @PostMapping("api/user/create")
     public String createUser(@RequestBody CreateUserPayload createUserPayload) throws Throwable{
         return userService.createUser(createUserPayload);
     }

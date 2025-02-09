@@ -1,6 +1,12 @@
 package com.project.everWealth.exceptions;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+// @AllArgsConstructor
+// @NoArgsConstructor
+@Data
 public class ErrorResponse {
     private final String errorCode;
     private final String errorMessage;
