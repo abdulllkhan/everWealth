@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #282c34;
+}
+.header h1 {
+  color: white;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; change this later */
+  font-size: 24px;
+}
+.body {
+  display: flex;
+  animation: 5000ms ease-in-out infinite color-change; /*breathing background for bare minimum*/
+  justify-content: space-evenly;
+  color: white;
+  min-height: 600px;
+  flex-grow: 1;
+}
+@keyframes color-change {
+  0%  {background-color: #246300;}
+  50%  {background-color: #7eb75d;}
+  100%  {background-color: #246300;}
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #282c34;
+  min-height: 100%;
+  color: white;
+  flex-shrink: 0;
+}
