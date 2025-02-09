@@ -62,25 +62,5 @@ public class UserServiceImplementation implements UserService {
         // return null;
     }
 
-    public Boolean isSessionCodeValid(String sessionCode){
-            
-        try(Connection connection = dataSource.getConnection();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?")){
-            
-            statement.setString(1, sessionCode);
-            try(ResultSet resultSet = statement.executeQuery()){
-                while(resultSet.next()){
-                    return true;
-                }
-            }
-
-        }catch(SQLException e){
-            throw new CustomException("400", e.getMessage());
-        }catch(RuntimeException e){
-            throw new CustomException("500", e.getMessage());
-        }
-    
-        return false;
-    }
     
 }
