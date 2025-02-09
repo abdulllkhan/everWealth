@@ -15,6 +15,8 @@ public class CreateUserResponse {
 
     private String accountNumber;
 
+    private Double balance;
+
     private String userId;
 
     private String message;

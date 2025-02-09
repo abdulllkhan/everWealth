@@ -59,8 +59,12 @@ public class User {
     @Column(name = "created_date", nullable = false)
     private Long createdDate;
 
+    @Column(name = "total_amount", nullable = true, columnDefinition = "Decimal(10,2) default '0.00'")  
+    private Double totalAmount;
+
     @PrePersist
     protected void onCreate() {
         this.createdDate = Instant.now().getEpochSecond(); // Set Unix timestamp before persisting
     }
+
 }

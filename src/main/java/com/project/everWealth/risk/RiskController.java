@@ -17,7 +17,7 @@ public class RiskController {
     @Autowired
     RiskRepository riskRepository;
 
-    @GetMapping("risk")
+    @GetMapping("api/risk")
     public ResponseEntity<?> getAllRiskEntities() {
           try {
             System.err.println("TEST");
@@ -31,8 +31,6 @@ public class RiskController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error fetching data", e);
         }
 
-
     }
-    
     
 }

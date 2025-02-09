@@ -38,7 +38,7 @@ public class UserController {
         return userService.createUser(createUserPayload);
     }
 
-    @GetMapping("api/user/{userId}")
+    @GetMapping("api/user/id/{userId}")
     public String getUserById(@PathVariable String userId) throws Throwable{
         return userService.fetchUserDetailsById(userId);
         // return 

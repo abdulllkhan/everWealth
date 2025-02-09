@@ -60,7 +60,11 @@ public class UserServiceImplementation implements UserService {
             if (user.isPresent()) {
                 throw new BadRequestException("User already exists");
             }
-            
+
+            Random random = new Random();
+            Integer min = 10000;
+            Integer max = 15000;
+            Double randomNumber = (double) (random.nextInt(max - min) + min);
     
             User temp = User.builder()
                     .userName(createUserPayload.getUserName())
@@ -75,6 +79,7 @@ public class UserServiceImplementation implements UserService {
                     .accountNumber(generateRandomString(10))
                     .password(getSHA(createUserPayload.getPassword()))
                     .createdDate(System.currentTimeMillis())
+                    .totalAmount(randomNumber)
                     .build();
                 
             userRepository.save(temp);
