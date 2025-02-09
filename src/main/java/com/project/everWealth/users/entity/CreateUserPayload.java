@@ -8,6 +8,9 @@ import jakarta.validation.constraints.NotBlank;
 @Data
 public class CreateUserPayload {
 
+    @NotBlank(message = "Username is required")
+    private String userName;
+
     @NotBlank(message = "First name is required")
     private String firstName;
 
@@ -31,6 +34,12 @@ public class CreateUserPayload {
 
     @NotBlank(message = "Nessie ID is required")
     private String nessieId;
+
+    @NotBlank(message = "Account number is required")
+    private String accountNumber;
+
+    @NotBlank(message = "Password is required")
+    private String password;
 
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")

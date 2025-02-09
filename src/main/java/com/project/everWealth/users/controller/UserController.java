@@ -19,7 +19,7 @@ public class UserController {
     // @Autowired
     // private Gson gson = new Gson();
 
-    @Autowired
+    // @Autowired
     public UserController(UserService userService
                             // Gson gson
                             ) {
@@ -27,10 +27,10 @@ public class UserController {
         // this.gson = gson;
     }
 
-    // @PostMapping("user/create")
-    // public String createUser(@RequestBody CreateUserPayload createUserPayload) {
-    //     return UserService.createUser(createUserPayload);
-    // }
+    @PostMapping("user/create")
+    public String createUser(@RequestBody CreateUserPayload createUserPayload) throws Throwable{
+        return userService.createUser(createUserPayload);
+    }
 
     @GetMapping("api/user/{userId}")
     public String getUserById(@PathVariable String userId) throws Throwable{

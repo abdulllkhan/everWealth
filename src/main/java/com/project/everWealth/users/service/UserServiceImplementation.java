@@ -34,10 +34,29 @@ public class UserServiceImplementation implements UserService {
         this.dataSource = dataSource;
     }
 
-    // @Override
-    // public String createUser(CreateUserPayload createUserPayload) {
-    //     return null;
-    // }
+    @Override
+    public String createUser(CreateUserPayload createUserPayload) {
+
+        User user = User.builder()
+                .userName(createUserPayload.getUserName())
+                .firstName(createUserPayload.getFirstName())
+                .lastName(createUserPayload.getLastName())
+                .streetNumber(createUserPayload.getStreetNumber())
+                .streetName(createUserPayload.getStreetName())
+                .city(createUserPayload.getCity())
+                .state(createUserPayload.getState())
+                .zip(createUserPayload.getZip())
+                .emailId(createUserPayload.getEmailId())
+                .accountNumber(createUserPayload.getAccountNumber())
+                .password(createUserPayload.getPassword())
+                .createdDate(System.currentTimeMillis())
+                .build();
+            
+        // userRepository.save(user);
+
+        return gson.toJson(userRepository.save(user));
+
+    }
 
     @Override
     public String fetchUserDetailsById(String userId) {
@@ -54,11 +73,6 @@ public class UserServiceImplementation implements UserService {
         } else {
             return gson.toJson(user.get());
         }
-
-
-
-        
-
         // return null;
     }
 

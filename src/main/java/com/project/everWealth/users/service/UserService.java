@@ -10,8 +10,8 @@ import com.project.everWealth.users.entity.CreateUserPayload;
 @Component
 public interface UserService {
 
-    // String createUser(CreateUserPayload createUserPayload);
+    String createUser(CreateUserPayload createUserPayload) throws RuntimeException, Exception;
 
-    String fetchUserDetailsById(String userId);
+    String fetchUserDetailsById(String userId) throws RuntimeException, Exception;
     
 }
